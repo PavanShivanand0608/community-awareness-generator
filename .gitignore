@@ -1,0 +1,29 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Dataset and downloaded data
+data/*
+!data/raw.dvc
+!data/processed.dvc
+datasets/
+
+# Model artifacts
+models/*.joblib
+
+# MLflow local tracking database and artifacts
+mlflow.db
+mlruns/
+notebooks/mlflow.db
+notebooks/mlruns/
+notebooks/models/*.joblib
+
+# Environment secrets
+.env
+
+# OS files
+.DS_Store

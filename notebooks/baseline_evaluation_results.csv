@@ -1,0 +1,2 @@
+model,validation_macro_f1,test_macro_f1,test_micro_f1,test_micro_precision,test_micro_recall,random_state,tfidf_max_features,tfidf_ngram_range,training_examples,validation_examples,test_examples,number_of_labels
+Linear SVM,0.8199866028925952,0.7153949273299182,0.7214611872146118,0.7300583657587548,0.7130641330166271,42,20000,"(1, 2)",4704,1176,1470,17

@@ -1,0 +1,28 @@
+{
+  "selected_model": "Linear SVM",
+  "label_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "validation_macro_f1": 0.8199866028925952,
+  "test_macro_f1": 0.7153949273299182,
+  "test_micro_f1": 0.7214611872146118,
+  "test_micro_precision": 0.7300583657587548,
+  "test_micro_recall": 0.7130641330166271,
+  "random_state": 42
+}
