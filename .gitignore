@@ -27,3 +27,4 @@ notebooks/models/*.joblib
 
 # OS files
 .DS_Store
+requirements-full-freeze.txt
