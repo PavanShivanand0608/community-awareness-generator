@@ -37,7 +37,7 @@ jobs:
           api = wandb.Api()
 
           artifact = api.artifact(
-              "phoenixrising27623-pavan/community-awareness-sdg-classifier:v0",
+              "phoenixrising27623-pavan/community-awareness-sdg-classifier/community-awareness-sdg-classifier:v0",
               type="model"
           )
 
