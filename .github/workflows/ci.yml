@@ -64,6 +64,32 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install W&B
+        run: pip install wandb
+
+      - name: Download trained model from W&B
+        env:
+          WANDB_API_KEY: ${{ secrets.WANDB_API_KEY }}
+        run: |
+          python - <<'PY'
+          import wandb
+
+          api = wandb.Api()
+
+          artifact = api.artifact(
+              "phoenixrising27623-pavan/community-awareness-sdg-classifier/community-awareness-sdg-classifier:v0",
+              type="model"
+          )
+
+          artifact.download(root="notebooks/models")
+          print("Model downloaded for Docker build.")
+          PY
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
