@@ -25,7 +25,32 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install pytest
+          pip install pytest wandb
+
+      - name: Download trained model from W&B
+        env:
+          WANDB_API_KEY: ${{ secrets.WANDB_API_KEY }}
+        run: |
+          python - <<'PY'
+          import wandb
+
+          api = wandb.Api()
+
+          artifact = api.artifact(
+              "phoenixrising27623-pavan/community-awareness-sdg-classifier:v0",
+              type="model"
+          )
+
+          artifact.download(root="notebooks/models")
+
+          print("W&B model artifact downloaded successfully.")
+          PY
+
+      - name: Verify model files
+        run: |
+          test -f notebooks/models/linear_svm_baseline.joblib
+          test -f notebooks/models/baseline_config.json
+          echo "Model and configuration files found."
 
       - name: Run predictor tests
         run: |
