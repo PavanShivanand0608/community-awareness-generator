@@ -6,3 +6,7 @@ mlflow
 numpy
 pandas
 scikit-learn
+fastapi
+uvicorn
+python-dotenv
+openai

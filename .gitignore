@@ -24,7 +24,36 @@ notebooks/models/*.joblib
 
 # Environment secrets
 .env
+.env.*
+!.env.example
 
 # OS files
 .DS_Store
 requirements-full-freeze.txt
+# Local Dolt database is versioned by Dolt, not Git
+/dolt/sdg_catalog/
+
+# Derived Dolt import artifact
+/data/processed/dolt_import/
+
+# Temporary and backup files
+*.save
+*.bak
+*.tmp
+
+# Weights & Biases local files
+wandb/
+notebooks/wandb/
+
+# Test and coverage files
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Incomplete Indian-language dataset experiment
+notebooks/Indian_Dataset.ipynb
